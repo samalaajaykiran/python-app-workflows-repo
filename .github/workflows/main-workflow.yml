@@ -7,9 +7,10 @@ on:
 
 jobs:
   build:
-    uses: user/workflow-templates-repo/.github/workflows/docker-build.yml@main
+    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-build.yml@main
     with:
       dockerfile: 'Dockerfile'
+      imagenametag: 'pythonchatapp:v1'
       context: '.'
 
   push:
