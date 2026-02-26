@@ -10,18 +10,25 @@ jobs:
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-build.yml@main
     with:
       dockerfile: 'Dockerfile'
-      imagenametag: 'pythonchatapp:v1'
+      image-name: 'pythonchatapp'
+      tag: 'v1'
       context: '.'
 
   push:
     uses: user/workflow-templates-repo/.github/workflows/docker-push.yml@main
     with:
-      image-name: 'my-python-app'
+      image-name: 'pythonchatapp'
+      tag: 'v1'
       acr-login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+      ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+      ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
 
   deploy:
     uses: user/workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
     with:
-      app-name: 'my-python-app-service'
-      image-name: 'my-python-app'
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      app-name: 'python-chat-app-service'
+      ResourceGroup: ${{ secrets.AZURE_ResourceGroup }}
+      image-name: 'pythonchatapp'
       acr-login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+      tag: 'v1'
