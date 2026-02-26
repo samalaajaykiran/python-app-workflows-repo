@@ -17,7 +17,7 @@ jobs:
 
   push:
     needs: build
-    uses: user/workflow-templates-repo/.github/workflows/docker-push.yml@main
+    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-push.yml@main
     with:
       image-name: 'pythonchatapp'
       tag: 'v1'
@@ -27,7 +27,7 @@ jobs:
 
   deploy:
     needs: push 
-    uses: user/workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
+    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
     with:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       app-name: 'python-chat-app-service'
