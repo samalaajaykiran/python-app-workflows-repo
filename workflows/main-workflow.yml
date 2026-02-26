@@ -1,0 +1,26 @@
+name: Build, Push and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: user/workflow-templates-repo/.github/workflows/docker-build.yml@main
+    with:
+      dockerfile: 'Dockerfile'
+      context: '.'
+
+  push:
+    uses: user/workflow-templates-repo/.github/workflows/docker-push.yml@main
+    with:
+      image-name: 'my-python-app'
+      acr-login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+
+  deploy:
+    uses: user/workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
+    with:
+      app-name: 'my-python-app-service'
+      image-name: 'my-python-app'
+      acr-login-server: ${{ secrets.ACR_LOGIN_SERVER }}
