@@ -32,7 +32,7 @@ jobs:
     with:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       app-name: 'python-chat-app-service'
-      ResourceGroup: ${{ secrets.AZURE_ResourceGroup }}
+      ResourceGroup: ${{ secrets.AZURE_RESOURCEGROUP }}
       image-name: 'pythonchatapp'
       acr-login-server: ${{ secrets.ACR_LOGIN_SERVER }}
       tag: 'v1'
