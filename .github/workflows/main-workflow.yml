@@ -28,7 +28,7 @@ jobs:
 
   deploy:
     needs: push
-    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main  # Correct reference
+    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main  
     with:
       app-name: python-chat-app-service
       ResourceGroup: ${{ vars.AZURE_RESOURCEGROUP }}  # Or keep as secret if you want
