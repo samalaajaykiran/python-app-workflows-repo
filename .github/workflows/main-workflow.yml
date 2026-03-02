@@ -23,7 +23,7 @@ jobs:
       tag: "v1"
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
       
-    secrets:  # Secrets should be pass
+    secrets:  # Secrets should be pa
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
 
