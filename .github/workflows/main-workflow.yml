@@ -13,7 +13,6 @@ jobs:
       tag: 'v1'
       context: '.'
 
-      
   push:
     needs: build
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-push.yml@main
