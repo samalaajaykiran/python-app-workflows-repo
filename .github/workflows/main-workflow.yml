@@ -28,7 +28,7 @@ jobs:
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
 
   deploy:
-    needs: push
+    
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
     with:
       app-name: "python-chat-app-service"
