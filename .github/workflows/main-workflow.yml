@@ -21,7 +21,7 @@ jobs:
     with:
       image-name: "pythonchatapp"
       tag: "v1"
-      acr-login-server:  pythochatapp.azurecr.io
+      acr-login-server:  ${{ vars.ACR_LOGIN_SERVER }}
       
     secrets:  # Secrets should be 
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
