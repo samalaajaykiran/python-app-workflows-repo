@@ -24,7 +24,7 @@ jobs:
 
     needs: build
 
-    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-push.yml@main
+    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-push-ARC.yml@main
 
     with:
 
