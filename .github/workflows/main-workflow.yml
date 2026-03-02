@@ -17,7 +17,7 @@ jobs:
  
   push:
     needs: build
-    uses: samalaajaykiran/reusable-workflow-templates-repo/blob/main/.github/workflows/docker-push-ACR.yml
+    uses: samalaajaykiran/reusable-workflow-templates-repo/blob/main/.github/workflows/docker-push-ACR.yml@main
     with:
       image-name: pythonchatapp
       tag: v1
