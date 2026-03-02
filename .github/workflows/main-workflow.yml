@@ -23,7 +23,7 @@ jobs:
       tag: "v1"
       acr-login-server:  pythochatapp.azurecr.io
       
-    secrets:  # Secrets should be pa
+    secrets:  # Secrets should be 
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
       
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
