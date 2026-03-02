@@ -21,11 +21,9 @@ jobs:
     with:
       image-name: "pythonchatapp"
       tag: "v1"
-      acr-login-server:  ${{ vars.ACR_LOGIN_SERVER }}
-
-      ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
-      
-      ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+      acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
+      ACR_USERNAME: ${{ secrets.ACR_USERNAME }}  # Pass secrets as inputs in 'with:'
+      ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}  # Pass secrets as inputs in 'with:'
 
   deploy:
     needs: push
@@ -36,5 +34,4 @@ jobs:
       image-name: "pythonchatapp"
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
       tag: "v1"
-    
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}  # Pass secrets as inputs in 'with:'
