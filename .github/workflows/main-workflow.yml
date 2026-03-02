@@ -31,7 +31,7 @@ jobs:
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main  
     with:
       app-name: python-chat-app-service
-      ResourceGroup: ${{ vars.AZURE_RESOURCEGROUP }}  # Or keep as secret if you want
+      ResourceGroup: ${{ vars.AZURE_RESOURCEGROUP }}  # Or 
       image-name: pythonchatapp
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
       tag: v1
