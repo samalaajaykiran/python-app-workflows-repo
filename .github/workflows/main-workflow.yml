@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - main
+      - master
 
 jobs:
   build:
@@ -16,7 +17,7 @@ jobs:
  
   push:
     needs: build
-    uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-push-ARC.yml@main
+    uses: samalaajaykiran/reusable-workflow-templates-repo/blob/main/.github/workflows/docker-push-ACR.yml
     with:
       image-name: pythonchatapp
       tag: v1
