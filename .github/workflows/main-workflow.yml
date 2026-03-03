@@ -26,7 +26,6 @@ jobs:
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}  
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}  
       
-      
   deploy:
     needs: push
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
