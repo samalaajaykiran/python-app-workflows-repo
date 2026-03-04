@@ -27,6 +27,7 @@ jobs:
       acr-location: "southindia"
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
 
+
       
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
