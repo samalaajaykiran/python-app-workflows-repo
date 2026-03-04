@@ -28,14 +28,14 @@ jobs:
       acr-name: "pythonchatapp"
       acr-location: "southindia"
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
-      subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}  
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
       
 
-      
+
   deploy:
     needs: push
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
