@@ -25,6 +25,7 @@ jobs:
       acr-name: "pythonchatapp"
       acr-location: "southindia"
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
+      
     secrets:
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}  
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}  
