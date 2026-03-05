@@ -28,12 +28,13 @@ jobs:
       ResourceGroup: ${{ vars.AZURE_RESOURCEGROUP }}
       acr-name: "pythonchatapp"
       acr-location: "southindia"
+      app-name: "python-chat-app-service"
+      runtime: "PYTHON|3.11"
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}   
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}  
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
-      
       
   deploy:
     needs: push
