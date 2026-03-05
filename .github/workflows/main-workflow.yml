@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
- 
+      
 jobs:
   build:
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-build.yml@main
@@ -14,9 +14,7 @@ jobs:
       image-name: "pythonchatapp"
       tag: "v1"
       context: "."
-
-
-
+  
   push:
     needs: build
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/docker-push-ACR.yml@main
@@ -26,18 +24,12 @@ jobs:
       ResourceGroup: ${{ vars.AZURE_RESOURCEGROUP }}
       acr-name: "pythonchatapp"
       acr-location: "southindia"
-      acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
-      
-
-      
-
+      acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}   
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}  
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
       
-
-
   deploy:
     needs: push
     uses: samalaajaykiran/reusable-workflow-templates-repo/.github/workflows/deploy-app-service.yml@main
