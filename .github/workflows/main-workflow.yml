@@ -45,7 +45,7 @@ jobs:
       image-name: "pythonchatapp"
       acr-login-server: ${{ vars.ACR_LOGIN_SERVER }}
       tag: "v1"
-      runtime: "PYTHON:3.11"
+      runtime: "python:3.11"
       acr-location: "southindia"
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}  
