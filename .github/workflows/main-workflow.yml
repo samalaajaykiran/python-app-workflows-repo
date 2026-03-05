@@ -26,7 +26,7 @@ jobs:
       image-name: "pythonchatapp"
       tag: "v1"
       ResourceGroup: ${{ vars.AZURE_RESOURCEGROUP }}
-      acr-name: "pythonchat_app"
+      acr-name: "pythonchat-app"
       acr-location: "southindia"
       app-name: "python-chat-app-service"
       runtime: "PYTHON:3.11"
